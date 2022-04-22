@@ -66,13 +66,17 @@ public class TreeTest {
     }
 
     @Test
-    public void testForFilterEmptyNodes(){
-        FileNode node1 = new FileNode();
-        FileNode node2 = new FileNode();
-        node1.isDir = false;
-        node2.isDir = true;
-        Tree.filterEmptyNodes(node1, middleDirectoryPath.toString());
-        Tree.filterEmptyNodes(node2, middleDirectoryPath.toString());
+    public void testForFilterEmptyNodes1(){
+        FileNode node = new FileNode();
+        node.isDir = false;
+        Tree.filterEmptyNodes(node, middleDirectoryPath.toString());
+    }
+
+    @Test
+    public void testForFilterEmptyNodes2(){
+        FileNode node = new FileNode();
+        node.isDir = true;
+        Tree.filterEmptyNodes(node, middleDirectoryPath.toString());
     }
 
 }
